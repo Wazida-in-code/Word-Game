@@ -55,8 +55,8 @@ Loading... 100%
 
 Enter Your Name: Wazida
 
-The Jumble Word Is: dogl
-Enter Your Word: dog
+The Jumble Word Is: yana
+Enter Your Word: anya
 
 Correct Guess!!!
 You Win!!!*-*
