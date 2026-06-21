@@ -7,9 +7,9 @@ Red = "\033[91m"
 Green = "\033[92m"
 Yellow = "\033[93m"
 Blue = "\033[94m"
-Purple = "\033[95m"
-Orange = "\033[38;5;208m" 
+Purple = "\033[95m" 
 Cyan = "\033[96m"
+Orange = "\033[38;5;208m"
 Reset = "\033[0m"
 
 
@@ -64,27 +64,39 @@ while playing:
                 print(Orange,"\nYou Have Only",chances,"Chances!",Reset)
                 print(Cyan,"\nTry Again!",Reset)
             else:
+                playing = False
                 print(Yellow,"\nAll your chances are gone!",Reset)
                 print(Red,"\nYou Lost!!",Reset)
                 print(Orange,"\nThe Correct Word is:", word,Reset)
+                exit = input("\n Press Enter To Exit..")
+                time.sleep(0.01)
+                break
     
 
-    print("-" * 20)
-    again = input("Do you want to play again?? {Yes/No}: ").lower()
+    if playing:
+        print("-" * 20)
+        again = input("Do you want to play again?? {Yes/No}: ").lower()
 
-    if again == "yes":
-        print()
-        playing = True
+        if again == "yes":
+            print()
+            playing = True
+        else:
+            playing =  False
     else:
-        playing =  False
-
-
+        break
 clear()
 
 print("~" * 26)
 print(Purple," ~~ G A M E  O V E R!! ~~",Reset)
 print()
-print(Blue," Your Final Score Is- ", score,Reset)
+
+if score > 0:
+    print(Green,"Congratulation,",Reset, Blue, User_Name, Reset)
+else:
+    print(f"Sorry {User_Name},You Have No Score!")
+
+print()
+print(Blue,"Your Final Score Is- ", score,Reset)
 print("~" * 26)
 
 exit = input("\n Press Enter To Exit..")
