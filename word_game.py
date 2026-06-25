@@ -41,6 +41,25 @@ print(Cyan,"The Game Is Starting...",Reset)
 time.sleep(2)
 clear()
 
+def high_score():
+    try:
+        with open("highscore.txt", "r") as file:
+            data = file.read().strip()
+            if ":" in data:
+                name, score_str = data.split(":")
+                return name, int(score_str)
+            return "No Player", 0
+    except (FileNotFoundError, ValueError):
+        return "No Player", 0
+    
+
+def save_high_score(User_Name, new_score):
+    with open("highscore.txt", "w") as file:
+        file.write(f"{User_Name}:{new_score}")
+
+
+high_score_player, current_high_score = high_score()
+
 
 while playing:
     word = random.choice(words)
@@ -98,6 +117,16 @@ else:
 print()
 print(Blue,"Your Final Score Is- ", score,Reset)
 print("~" * 26)
+
+if (score > current_high_score):
+    print(Green, "\n NEW HIGH SCORE!!", Reset)
+    print(Yellow,f"Old Record:{current_high_score} | New Record: {score}",Reset)
+    save_high_score(User_Name, score)
+else:
+    print(Cyan,f"\nAll-Time High Score to beat: {current_high_score}",Reset)
+
+print()
+print("*" * 26)
 
 exit = input("\n Press Enter To Exit..")
 time.sleep(0.01)
