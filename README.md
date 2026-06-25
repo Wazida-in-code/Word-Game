@@ -24,6 +24,8 @@ A simple and fun word guessing game built with Python. Unscramble jumbled words 
 
 🎯 **Scoring System** - Earn 10 points for every correct guess
 
+🏆 **High Score Tracking** - Your best score is saved and displayed at the end of each game session
+
 🔄 **Multiple Rounds** - Play as many rounds as you want
 
 🎲 **Random Words** - Randomly selected words from a word list
@@ -66,16 +68,25 @@ Do you want to play again?? {Yes/No}: no
 ~~ G A M E  O V E R!! ~~
 
 Your Final Score Is- 10
+
+All-Time High Score to beat: 50
 ```
 
 ## Game Words
 
-The game includes a variety of words including names, places, and common English words like: anya, loid, thorn, ayanokoji, gojo, blue, and many more!
+The game includes a variety of words including names, places, and common English words like: anya, loid, thorn, ayanokoji, gojo, blue, bruno, horikita, dualipa, and many more!
 
 ## Technical Details
 
 - **Language:** Python 3
-- **Features:** ANSI color codes for terminal styling, random word selection, score tracking
+- **Features:** ANSI color codes for terminal styling, random word selection, persistent high score tracking
+- **Data Storage:** High scores are saved in `highscore.txt` for future game sessions
+
+## Scoring & High Scores
+
+- Each correct word guess earns you **10 points**
+- Your best score is automatically saved to `highscore.txt`
+- Beat the all-time high score and become the champion! 👑
 
 ## Author
 
