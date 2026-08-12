@@ -25,7 +25,7 @@ playing = True
 
 clear()
 print("-"*44)   #First design
-print(Blue,"~~~~~>...}Welcome To Our Word Game{...<~~~~~", Reset)
+print(Blue,"~~~~~>...}Welcome To This Word Game{...<~~~~~", Reset)
 print("-"*44)
 
 
